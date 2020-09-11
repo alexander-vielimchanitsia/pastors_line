@@ -1,22 +1,23 @@
 import React from 'react';
 
+import Spinner from '../Spinner/Spinner';
 import Modal from './Modal';
 
 
-const ContactsModal = ({ modalActions, contacts, ...restProps }) => {
+const ContactsModal = ({ modalActions, contacts, onContactSelect, ...restProps }) => {
 
   const [isEvenChecked, setIsEvenChecked] = React.useState(false);
 
   const renderAllContacts = React.useMemo(() => {
-    if (!contacts) {
-      return null;
+    if (!contacts || !contacts.items || !contacts.items.length) {
+      return <Spinner />;
     }
     return contacts.items
       .filter((contact) => {
         return !isEvenChecked || (contact.id & 1) === 0;
       })
       .map((contact) => (
-        <tr key={contact.id}>
+        <tr key={contact.id} onClick={() => onContactSelect(contact)}>
           <th scope="row">{contact.id}</th>
           <td>{contact.first_name}</td>
           <td>{contact.last_name}</td>
@@ -30,7 +31,7 @@ const ContactsModal = ({ modalActions, contacts, ...restProps }) => {
   }, [setIsEvenChecked]);
 
   return (
-    <Modal {...restProps}>
+    <Modal dialogClass="modal-lg modal-dialog-scrollable" {...restProps}>
       <div className="modal-body">
         <table className="table table-hover table-sm">
           <thead>

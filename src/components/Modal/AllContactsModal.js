@@ -5,14 +5,15 @@ import { fetchContacts } from '../../actions/contactAction';
 import ContactsModal from './ContactsModal';
 
 
-const AllContactsModal = ({ modalActions, fetchContacts, contacts }) => {
+const AllContactsModal = ({ modalActions, fetchContacts, contacts, ...restProps }) => {
 
   React.useEffect(() => {
     fetchContacts();
   }, [fetchContacts]);
 
   return (
-    <ContactsModal title="All contacts" id="allContactsModal" contacts={contacts} modalActions={modalActions}/>
+    <ContactsModal title="All contacts" id="allContactsModal" contacts={contacts}
+                   modalActions={modalActions} {...restProps}/>
   );
 };
 
