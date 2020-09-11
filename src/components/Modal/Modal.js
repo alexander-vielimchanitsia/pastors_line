@@ -7,7 +7,7 @@ const rootElement = document.getElementById('root');
 const Modal = ({ title, children, ...restProps }) => {
   return ReactDOM.createPortal((
     <div className="modal fade" tabIndex="-1" {...restProps}>
-      <div className="modal-dialog">
+      <div className="modal-dialog modal-lg modal-dialog-scrollable">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">{title}</h5>

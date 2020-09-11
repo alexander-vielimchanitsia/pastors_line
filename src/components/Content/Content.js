@@ -1,12 +1,12 @@
 import React from 'react';
 
-import ContactsModal from '../Modal/ContactsModal';
+import AllContactsModal from '../Modal/AllContactsModal';
+import USContactsModal from '../Modal/USContactsModal';
 import Button from '../Button/Button';
 import './Content.sass';
 
 
 const Content = () => {
-
   const modalActions = React.useMemo(() => {
     return (
       <div className="d-flex justify-content-end">
@@ -28,16 +28,8 @@ const Content = () => {
         <Button className="m-1" data-toggle="modal" data-target="#usContactsModal">US Contacts</Button>
       </div>
 
-      <ContactsModal title="All contacts" id="allContactsModal">
-        <p>all contacts here.</p>
-        <hr/>
-        {modalActions}
-      </ContactsModal>
-      <ContactsModal title="US contacts" id="usContactsModal">
-        <p>us contacts here.</p>
-        <hr/>
-        {modalActions}
-      </ContactsModal>
+      <AllContactsModal actions={modalActions} />
+      <USContactsModal actions={modalActions} />
     </>
   );
 };
