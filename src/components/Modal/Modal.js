@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const rootElement = document.getElementById('root');
 
+const rootElement = document.getElementById('root');
 
 const Modal = ({ title, children, ...restProps }) => {
   return ReactDOM.createPortal((

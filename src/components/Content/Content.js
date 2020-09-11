@@ -10,13 +10,13 @@ const Content = () => {
   const modalActions = React.useMemo(() => {
     return (
       <div className="d-flex justify-content-end">
-        <Button className="m-1" data-dismiss="modal" data-toggle="modal" data-target="#allContactsModal">
+        <Button className="Button_all-contacts m-1" data-dismiss="modal" data-toggle="modal" data-target="#allContactsModal">
           All Contacts
         </Button>
-        <Button className="m-1" data-dismiss="modal" data-toggle="modal" data-target="#usContactsModal">
+        <Button className="Button_us-contacts m-1" data-dismiss="modal" data-toggle="modal" data-target="#usContactsModal">
           US Contacts
         </Button>
-        <button type="button" className="btn btn-secondary m-1" data-dismiss="modal">Close</button>
+        <button type="button" className="Modal__Button_close btn btn-secondary m-1" data-dismiss="modal">Close</button>
       </div>
     );
   }, []);
@@ -24,12 +24,12 @@ const Content = () => {
   return (
     <>
       <div className="Content d-flex align-items-center justify-content-center">
-        <Button className="m-1" data-toggle="modal" data-target="#allContactsModal">All Contacts</Button>
-        <Button className="m-1" data-toggle="modal" data-target="#usContactsModal">US Contacts</Button>
+        <Button className="Button_all-contacts m-1" data-toggle="modal" data-target="#allContactsModal">All Contacts</Button>
+        <Button className="Button_us-contacts m-1" data-toggle="modal" data-target="#usContactsModal">US Contacts</Button>
       </div>
 
-      <AllContactsModal actions={modalActions} />
-      <USContactsModal actions={modalActions} />
+      <AllContactsModal modalActions={modalActions} />
+      <USContactsModal modalActions={modalActions} />
     </>
   );
 };
