@@ -8,6 +8,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 
 import store from './store';
 import App from './App';
+import { appContainer } from './constants';
 import './index.sass';
 
 
@@ -17,5 +18,5 @@ ReactDOM.render(
       <App/>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root'),
+  appContainer,
 );

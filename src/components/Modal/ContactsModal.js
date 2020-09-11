@@ -24,7 +24,7 @@ const ContactsModal = ({ modalActions, contacts, onContactSelect, ...restProps }
           <td>{contact.country && contact.country.iso}</td>
         </tr>
       ));
-  }, [contacts, isEvenChecked]);
+  }, [contacts, isEvenChecked, onContactSelect]);
 
   const handleCheckboxChange = React.useCallback((event) => {
     setIsEvenChecked(event.target.checked);

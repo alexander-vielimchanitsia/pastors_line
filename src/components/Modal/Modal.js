@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { appContainer } from '../../constants';
 
-const rootElement = document.getElementById('root');
 
 const Modal = ({ title, children, dialogClass, ...restProps }) => {
   return ReactDOM.createPortal((
@@ -19,7 +19,7 @@ const Modal = ({ title, children, dialogClass, ...restProps }) => {
         </div>
       </div>
     </div>
-  ), rootElement);
+  ), appContainer);
 };
 
 export default Modal;
