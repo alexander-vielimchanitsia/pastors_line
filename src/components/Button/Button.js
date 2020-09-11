@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-const Button = ({ className, children }) => (
-  <button type="button" className={`btn btn-secondary ${className}`}>{children}</button>
+const Button = ({ className, children, ...restProps }) => (
+  <button type="button" className={`btn btn-secondary ${className}`} {...restProps}>{children}</button>
 );
 
 export default Button;
